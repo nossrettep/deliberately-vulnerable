@@ -1,3 +1,5 @@
-# morancj Template
+# deliberately-vulnerable
 
-Settings for Git and editors popular with [morancj](https://github.com/morancj/).
+Various files with deliberate vulnerabilities to test scanning tools.
+
+__OBVIOUS WARNING: DO NOT USE THESE!__
