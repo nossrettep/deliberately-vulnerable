@@ -27,7 +27,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
   apt-get update
 
 RUN apt-get install -y --no-install-recommends \
-# Install temporary packages
+# Install packages
  ${VERSIONED_PACKAGES} \
  && \
 # Clean up package cache in this layer
