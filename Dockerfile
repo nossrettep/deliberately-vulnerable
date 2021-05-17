@@ -27,8 +27,9 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
   apt-get update
 
 RUN apt-get install -y --no-install-recommends \
-# Install temporary packages
+# Install packages
  ${VERSIONED_PACKAGES} \
+ awscli=1.2.9-2 \
  && \
 # Clean up package cache in this layer
 # Remove dependencies which are no longer required
@@ -43,6 +44,9 @@ RUN apt-get install -y --no-install-recommends \
  /var/cache/* \
  /var/log/* \
  /var/lib/apt/lists/*
+
+# Copy AWS example credentials, entirely unprotected
+COPY .aws /root/.aws
 
 #Set root´s password to something silly
 RUN echo 'root:root' | chpasswd
